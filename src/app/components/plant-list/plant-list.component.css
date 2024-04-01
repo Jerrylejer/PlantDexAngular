@@ -1,4 +1,6 @@
 .container-plants{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    max-width: fit-content;
 }

@@ -1,3 +1,9 @@
 #flexIt{
     display: flex;
 }
+
+#plantsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

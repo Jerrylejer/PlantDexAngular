@@ -22,7 +22,7 @@ export class PlantService {
    *
    */
   getPlants(): Observable<Plant[]> {
-    return this.http.get<Plant[]>(`${this.apiUrl}/plants/`).pipe(
+    return this.http.get<Plant[]>(`${this.apiUrl}/plants`).pipe(
       catchError((error) => {
         return throwError(() => error)
       })

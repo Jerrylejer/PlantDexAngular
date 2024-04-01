@@ -9,9 +9,9 @@ import { PlantService } from 'src/app/services/plant.service';
 })
 export class PageHomeComponent implements OnInit {
   // Plantes à afficher dans la page
-  allPlants!: Plant[];
-  plantsToDisplay!: Plant[];
-  categories!: string[];
+  allPlants: Plant[] = [];
+  plantsToDisplay: Plant[] = [];
+  categories: string[] = [];
   //Les variables "tampon" pour appliquer tous les filtres en même temps
   categoriesChecked!: string[];
   userInput!: string;
@@ -20,10 +20,14 @@ export class PageHomeComponent implements OnInit {
 
   ngOnInit() {
     this.instancePlantService.getPlants().subscribe((data: Plant[]) => {
+
       console.log(data);
 
       this.plantsToDisplay = [...data];
-      this.allPlants = [...data];
+      console.log(this.plantsToDisplay)
+      this.allPlants = data;
+
+      console.log(this.allPlants);
       // Pour supprimer les doublons d'un tableau
       // [...new Set(tableau)]
       this.categories = [

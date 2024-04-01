@@ -1,6 +1,9 @@
-<div class="container-plants p-5">
-  <app-card
-    *ngFor="let plant of plantsRecupDeLaHome"
-    [unePlanteAAfficher]="plant"
-  ></app-card>
+<div class="container-plants p-5" *ngFor="let plant of plantsRecupDeLaHome">
+  <app-card [unePlanteAAfficher]="plant">
+  {{plant.image}}
+  {{plant.nom}}
+  {{plant.soleil}}
+  {{plant.arrosage}}
+  {{plant.categorie}}
+</app-card>
 </div>
