@@ -1,0 +1,20 @@
+<div class="card" style="width: 18rem">
+    <img
+      class="card-img-top"
+      src="{{ plant.image }}"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ plant.nom }}</h5>
+      <p class="card-text">
+        {{ plant.categorie }}
+      </p>
+      <p class="card-text">
+        Besoin lumière : {{ plant.soleil }}
+      </p>
+      <p class="card-text">
+        Intensité d'arrosage : {{ plant.arrosage }}
+      </p>
+      <a class="btn btn-primary">Acheter</a>
+    </div>
+</div>

@@ -13,6 +13,7 @@ import { PlantListComponent } from './components/plant-list/plant-list.component
 import { CardComponent } from './components/card/card.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { PageOnePlantComponent } from './pages/page-one-plant/page-one-plant.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     CardComponent,
     SideBarComponent,
     SearchBarComponent,
+    PageOnePlantComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
