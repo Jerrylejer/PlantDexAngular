@@ -75,8 +75,16 @@ export class PlantService {
    * une requête http de type POST 
    * à partir de l'URL apiUrl/plants/post"
    */
-    createPlant(plant: Plant): Observable<Plant> {
-      return this.http.put<Plant>(`${this.apiUrl}/plants/post`, plant).pipe(
+    createPlant(id: number, nom: string, soleil: string, arrosage: number, categorie: string, image: string): Observable<Plant> {
+      const body = {
+        id: id,
+        nom: nom,
+        soleil: soleil,
+        arrosage: arrosage,
+        categorie: categorie,
+        image: image
+      }
+      return this.http.post<Plant>(`${this.apiUrl}/plants/post`, body).pipe(
         catchError((error) => {
           return throwError(() => error)
         })
