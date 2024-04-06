@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { PlantService } from 'src/app/services/plant.service';
 
@@ -12,7 +13,7 @@ export class PageAdminComponent implements OnInit {
   // J'initialise mon formulaire qui va me servir à ajouter une nouvelle plante
   newPlantForm!: FormGroup;
   // J'injecte mon plantService ainsi que le constructeur de formulaire
-  constructor(private plantService: PlantService, private formBuilder: FormBuilder){}
+  constructor(private plantService: PlantService, private formBuilder: FormBuilder, private route: Router){}
 
   ngOnInit(): void {
     // J'initialise les champs de mon formulaire au lancement de mon composant
@@ -50,7 +51,8 @@ export class PageAdminComponent implements OnInit {
         })
       )
       .subscribe((response) => {
-        console.log("Nouvelle plante ajoutée !!! Bravo !");
+        alert(`Nouvelle plante ${response.nom} a été ajoutée !!! Bravo !`);
+        this.route.navigate(['/home']);
         console.log(response);
       })
     }

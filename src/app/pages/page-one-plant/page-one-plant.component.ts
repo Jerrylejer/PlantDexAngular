@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { catchError, switchMap, throwError } from 'rxjs';
 import { Plant } from 'src/app/models/plant';
 import { PlantService } from 'src/app/services/plant.service';
@@ -15,7 +15,7 @@ export class PageOnePlantComponent implements OnInit {
     // Plante sélectionnée
     plant!: Plant;
 
-  constructor(private activatedRoute: ActivatedRoute, private plantService: PlantService){}
+  constructor(private activatedRoute: ActivatedRoute, private plantService: PlantService, private router: Router){}
 
   ngOnInit(): void {
     // Je récupère l'id de la plante dans la route au lancement du composant
@@ -36,5 +36,22 @@ export class PageOnePlantComponent implements OnInit {
       console.log(plant)
     });
   }  
+
+  modifierLaPlante(): void {
+
+  }
+
+  supprimerLaPlante(): void {
+ this.plantService.deletePlant(Number(this.plantID)).pipe(
+  catchError((error) => {
+    return throwError(() => error);
+  })
+ )
+ .subscribe((deletedPlant) => {
+   alert(`La plante ${deletedPlant.nom} est supprimée !`);
+   this.router.navigate(['/home']);
+ }
+ )
+  }
 }
 
