@@ -1,52 +1,54 @@
 <section>
-    <h1>Section administration du site Plantdex</h1>
+    <h1 class="p-2">Section administration du site Plantdex</h1>
 
-    <h3>Formulaire d'ajout d'une nouvelle plante</h3>
+    <h3 class="p-2">Formulaire d'ajout d'une nouvelle plante</h3>
     <form class="form" [formGroup]="newPlantForm" (ngSubmit)="submit()">
         <div>
-            <div>
+            <div class="p-2 d-flex flex-column">
                 <label for="id">ID de la plante</label>
-                <input type="number" class="input" id="id" formControlName="id"/> 
+                <input type="number" class="input w-50" id="id" formControlName="id"/> 
                 <div class="field-message" *ngIf="newPlantForm.get('id')?.invalid  && (newPlantForm.get('id')?.dirty || newPlantForm.get('id')?.touched)">
                     Le champ doit être renseigné., de 4 à 6 caractères alphanumérics.
                 </div>
             </div>
-            <div>
+            <div class="p-2 d-flex flex-column">
                 <label for="nom">Nom de la plante</label>
-                <input type="text" class="input" id="nom" formControlName="nom"/> 
+                <input type="text" class="input w-50" id="nom" formControlName="nom"/> 
                 <div class="field-message" *ngIf="newPlantForm.get('nom')?.invalid  && (newPlantForm.get('nom')?.dirty || newPlantForm.get('nom')?.touched)">
                     Le champ doit être renseigné.
                 </div>
             </div>
-            <div>
+            <div class="p-2 d-flex flex-column">
                 <label for="soleil">Besoin lumière</label>
-                <input type="text" class="input" id="soleil" formControlName="soleil"/> 
+                <input type="text" class="input w-50" id="soleil" formControlName="soleil"/> 
                 <div class="field-message" *ngIf="newPlantForm.get('soleil')?.invalid  && (newPlantForm.get('soleil')?.dirty || newPlantForm.get('soleil')?.touched)">
                     Le champ doit être renseigné.
                 </div>
             </div>
-            <div>
+            <div class="p-2 d-flex flex-column">
                 <label for="arrosage">Besoin arrosage</label>
-                <input type="number" class="input" id="arrosage" formControlName="arrosage"/> 
+                <input type="number" class="input w-50" id="arrosage" formControlName="arrosage"/> 
                 <div class="field-message" *ngIf="newPlantForm.get('arrosage')?.invalid  && (newPlantForm.get('arrosage')?.dirty || newPlantForm.get('arrosage')?.touched)">
                     De 1 à 5 caractères alphanumérics, valeur de 1 à 5
                 </div>
             </div>
-            <div>
+            <div class="p-2 d-flex flex-column">
                 <label for="categorie">Catégorie affiliée</label>
-                <input type="text" class="input" id="categorie" formControlName="categorie"/> 
+                <input type="text" class="input w-50" id="categorie" formControlName="categorie"/> 
                 <div class="field-message" *ngIf="newPlantForm.get('categorie')?.invalid  && (newPlantForm.get('categorie')?.dirty || newPlantForm.get('categorie')?.touched)">
                     Le champ doit être renseigné.
                 </div>
             </div>
-            <div>
+            <div class="p-2 d-flex flex-column">
                 <label for="image">Image</label>
-                <input type="text" class="input" id="image" formControlName="image"/> 
+                <input type="text" class="input w-50" id="image" formControlName="image"/> 
                 <div class="field-message" *ngIf="newPlantForm.get('image')?.invalid  && (newPlantForm.get('image')?.dirty || newPlantForm.get('image')?.touched)">
                     Le champ doit être renseigné.
                 </div>
             </div>
-            <button type="submit">Valider</button>
+            <div class="p-2">
+                <button type="submit">Valider</button>
+            </div>
         </div>
     </form>
 </section>
