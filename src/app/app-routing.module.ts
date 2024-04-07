@@ -6,6 +6,7 @@ import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageOnePlantComponent } from './pages/page-one-plant/page-one-plant.component';
 import { PageAdminModifPlantComponent } from './pages/page-admin-modif-plant/page-admin-modif-plant.component';
+import { PageConnexionComponent } from './pages/page-connexion/page-connexion.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: PageHomeComponent },
   { path: 'home/onePlant/:id', component: PageOnePlantComponent },
   { path: 'my-plants', component: PageMyPlantsComponent },
+  { path: 'connexion', component: PageConnexionComponent },
   { path: 'admin', component: PageAdminComponent },
   { path: 'admin/modifPlant/:id', component: PageAdminModifPlantComponent},
   { path: '**', component: PageNotFoundComponent },

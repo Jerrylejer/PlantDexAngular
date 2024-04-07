@@ -16,6 +16,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { PageOnePlantComponent } from './pages/page-one-plant/page-one-plant.component';
 import { PageAdminModifPlantComponent } from './pages/page-admin-modif-plant/page-admin-modif-plant.component';
+import { PageConnexionComponent } from './pages/page-connexion/page-connexion.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PageAdminModifPlantComponent } from './pages/page-admin-modif-plant/pag
     SearchBarComponent,
     PageOnePlantComponent,
     PageAdminModifPlantComponent,
+    PageConnexionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule, ReactiveFormsModule],
   providers: [],
