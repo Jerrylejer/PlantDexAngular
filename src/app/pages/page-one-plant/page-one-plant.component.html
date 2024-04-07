@@ -17,7 +17,7 @@
       </p>
       <!-- Si admin apparition de ses btns -->
       <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" (click)="modifierLaPlante()">Modifier</a>
+        <a class="btn btn-primary" [routerLink]="['/admin/modifPlant', plant.id]">Modifier</a>
         <a class="btn btn-danger" (click)="supprimerLaPlante()">Supprimer</a>
       </div>
     </div>

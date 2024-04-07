@@ -62,13 +62,33 @@ export class PlantService {
    * une requête http de type PUT 
    * à partir de l'URL apiUrl/plants/update/:id"
    */
-    updatePlant(id: number, plant: Plant): Observable<Plant> {
-      return this.http.put<Plant>(`${this.apiUrl}/plants/update/${id}`, plant).pipe(
+    updatePlant(id: number, nom: string, soleil: string, arrosage: number, categorie: string, image: string): Observable<Plant> {
+      const body = {
+        id: id,
+        nom: nom,
+        soleil: soleil,
+        arrosage: arrosage,
+        categorie: categorie,
+        image: image
+      }
+      console.log(id);
+      console.log(body);
+      return this.http.put<Plant>(`${this.apiUrl}/plants/update/${id}`, body).pipe(
         catchError((error) => {
           return throwError(() => error)
         })
       );
     }
+
+    // updatePlant(id: number, formData: FormData): Observable<any> {
+    //   console.log(id);
+    //   console.log(formData.get('nom'));
+    //   return this.http.put(`${this.apiUrl}/plants/update/${id}`, formData).pipe(
+    //     catchError((error) => {
+    //       return throwError(() => error)
+    //     })
+    //   );
+    // }
 
     /**
    * La méthode createPlant retourne

@@ -1,0 +1,54 @@
+<section>
+    <p>page-admin-modif-plant works!</p><section>
+        <h1>Section administration du site Plantdex</h1>
+    
+        <h3>Formulaire de modification d'une plante</h3>
+        <form class="form" [formGroup]="updatePlantForm" (ngSubmit)="submit()">
+            <div>
+                <div>
+                    <label for="idToUpdate">ID de la plante</label>
+                    <input type="number" class="input" id="idToUpdate" formControlName="idToUpdate" [(ngModel)]="plantToUpdate.id"/> 
+                    <div class="field-message" *ngIf="updatePlantForm.get('id')?.invalid  && (updatePlantForm.get('id')?.dirty || updatePlantForm.get('id')?.touched)">
+                        Le champ doit être renseigné., de 4 à 6 caractères alphanumérics.
+                    </div>
+                </div>
+                <div>
+                    <label for="nomToUpdate">Nom de la plante</label>
+                    <input type="text" class="input" id="nomToUpdate" formControlName="nomToUpdate" [(ngModel)]="plantToUpdate.nom"/> 
+                    <!-- <div class="field-message" *ngIf="updatePlantForm.get('nom')?.invalid  && (updatePlantForm.get('nom')?.dirty || updatePlantForm.get('nom')?.touched)">
+                        Le champ doit être renseigné.
+                    </div> -->
+                </div>
+                <div>
+                    <label for="soleilToUpdate">Besoin lumière</label>
+                    <input type="text" class="input" id="soleilToUpdate" formControlName="soleilToUpdate" [(ngModel)]="plantToUpdate.soleil"/> 
+                    <!-- <div class="field-message" *ngIf="updatePlantForm.get('soleil')?.invalid  && (updatePlantForm.get('soleil')?.dirty || updatePlantForm.get('soleil')?.touched)">
+                        Le champ doit être renseigné.
+                    </div> -->
+                </div>
+                <div>
+                    <label for="arrosageToUpdate">Besoin arrosage</label>
+                    <input type="number" class="input" id="arrosageToUpdate" formControlName="arrosageToUpdate" [(ngModel)]="plantToUpdate.arrosage"/> 
+                    <div class="field-message" *ngIf="updatePlantForm.get('arrosage')?.invalid  && (updatePlantForm.get('arrosage')?.dirty || updatePlantForm.get('arrosage')?.touched)">
+                        De 1 à 5 caractères alphanumérics, valeur de 1 à 5
+                    </div>
+                </div>
+                <div>
+                    <label for="categorieToUpdate">Catégorie affiliée</label>
+                    <input type="text" class="input" id="categorieToUpdate" formControlName="categorieToUpdate" [(ngModel)]="plantToUpdate.categorie"/> 
+                    <!-- <div class="field-message" *ngIf="updatePlantForm.get('categorie')?.invalid  && (updatePlantForm.get('categorie')?.dirty || updatePlantForm.get('categorie')?.touched)">
+                        Le champ doit être renseigné.
+                    </div> -->
+                </div>
+                <div>
+                    <label for="imageToUpdate">Image</label>
+                    <input type="text" class="input" id="imageToUpdate" formControlName="imageToUpdate" [(ngModel)]="plantToUpdate.image"/> 
+                    <div class="field-message" *ngIf="updatePlantForm.get('image')?.invalid  && (updatePlantForm.get('image')?.dirty || updatePlantForm.get('image')?.touched)">
+                        Le champ doit être renseigné.
+                    </div>
+                </div>
+                <button type="submit">Modifier</button>
+            </div>
+        </form>
+</section>
+

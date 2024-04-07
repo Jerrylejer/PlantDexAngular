@@ -15,6 +15,7 @@ import { CardComponent } from './components/card/card.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { PageOnePlantComponent } from './pages/page-one-plant/page-one-plant.component';
+import { PageAdminModifPlantComponent } from './pages/page-admin-modif-plant/page-admin-modif-plant.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PageOnePlantComponent } from './pages/page-one-plant/page-one-plant.com
     SideBarComponent,
     SearchBarComponent,
     PageOnePlantComponent,
+    PageAdminModifPlantComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule, ReactiveFormsModule],
   providers: [],

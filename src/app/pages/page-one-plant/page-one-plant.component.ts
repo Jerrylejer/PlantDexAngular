@@ -37,10 +37,7 @@ export class PageOnePlantComponent implements OnInit {
     });
   }  
 
-  modifierLaPlante(): void {
-
-  }
-
+  // Supprimer une plante de la BDD
   supprimerLaPlante(): void {
  this.plantService.deletePlant(Number(this.plantID)).pipe(
   catchError((error) => {
